@@ -39,16 +39,46 @@ namespace Challenge_2
                     case "2":
                         Console.Clear();
 
-                        Claim peek = claimRepo.SeeNextClaimInQueue();
-                        Console.WriteLine($"Claim ID: {peek.ClaimID}\n" +
-                            $"Claim Type: {peek.ClaimType}\n" +
-                            $"Claim Description: {peek.ClaimDescription}\n" +
-                            $"Claim Amount: {peek.ClaimAmount}\n" +
-                            $"Date of Incident: {peek.DateOfIncident}\n" +
-                            $"Date of Claim: {peek.DateOfClaim}\n" +
-                            $"Claim Validity: {peek.IsValidKomodo}\n");
+                        Console.SetBufferSize(150, 150);
 
-                        Console.WriteLine("Do you want to be assigned as the agent for this claim? y/n");
+                        Claim peek = claimRepo.SeeNextClaimInQueue();
+                        Console.SetCursorPosition(0,0);
+                        Console.Write("ID:");
+                        Console.SetCursorPosition(0, 1);
+                        Console.Write(peek.ClaimID);
+                        //Console.WriteLine($"Claim ID: {peek.ClaimID}\n" +
+                        Console.SetCursorPosition(9,0);
+                        Console.Write("Type:");
+                        Console.SetCursorPosition(9, 1);
+                        Console.Write(peek.ClaimType);
+                        //$"Claim Type: {peek.ClaimType}\n" +
+                        Console.SetCursorPosition(20, 0);
+                        Console.Write("Description:");
+                        Console.SetCursorPosition(20, 1);
+                        Console.Write(peek.ClaimDescription);
+                        //$"Claim Description: {peek.ClaimDescription}\n" +
+                        Console.SetCursorPosition(47, 0);
+                        Console.Write("Amount:");
+                        Console.SetCursorPosition(47, 1);
+                        Console.Write(peek.ClaimAmount);
+                        //$"Claim Amount: {peek.ClaimAmount}\n" +
+                        Console.SetCursorPosition(60, 0);
+                        Console.Write("Date of Incident:");
+                        Console.SetCursorPosition(60, 1);
+                        Console.Write(peek.DateOfIncident.ToShortDateString());
+                        //$"Date of Incident: {peek.DateOfIncident}\n" +
+                        Console.SetCursorPosition(83, 0);
+                        Console.Write("Date of Claim:");
+                        Console.SetCursorPosition(83, 1);
+                        Console.Write(peek.DateOfClaim.ToShortDateString());
+                        //$"Date of Claim: {peek.DateOfClaim}\n" +
+                        Console.SetCursorPosition(103, 0);
+                        Console.Write("Validity:");
+                        Console.SetCursorPosition(103, 1);
+                        Console.Write(peek.IsValidKomodo);
+                        //$"Claim Validity: {peek.IsValidKomodo}\n");
+
+                        Console.WriteLine("\n\nDo you want to be assigned as the agent for this claim? y/n");
                         string agentAssignment = Console.ReadLine();
                         if (agentAssignment == "y")
                         {
@@ -97,6 +127,7 @@ namespace Challenge_2
                             {
                                 isValidKomodo = false;
                                 Console.WriteLine("I'm sorry, we cannot process your claim because it occurred outside our 30-day claim period.");
+                                break;
                             }
                             Claim userInput = new Claim(claimID, claimType, claimDescription, claimAmount, dateOfIncident, dateOfClaim, isValidKomodo);
                             claimRepo.AddClaim(userInput);

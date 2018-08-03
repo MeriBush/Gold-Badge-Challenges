@@ -10,19 +10,14 @@ namespace Challenge_1
     {
         static void Main(string[] args)
         {
-            //1) ME:  Dear Compy: I'm making a new object called menuRepo. It's an instance of MenuRepository, so on over to that file if you need to access its mystical powers.
             MenuRepository menuRepo = new MenuRepository();
 
-            //--10-- Ah, here are all of the objects of the Menu class! Although you generalized and called them each "drink" over in menuRepo, here I see that
-            //they each of have their own unique name and identity.
             Menu komodoDragon = new Menu("1", "Komodo Dragon", "A Komodo twist on a chai tea latte", "Milk, Water, Chai Tea, Honey, Vanilla", 3.49m);
             Menu komocha = new Menu("2", "KoMocha", "A Mocha latte with a fiery twist!", "Milk, Espresso, Ground Cacao, Sugar, Cinnamon, Cayenne Pepper", 4.25m);
             Menu komodoKoffee = new Menu("3", "Komodo Koffee", "This classic Komodo blend is a customer favorite!", "Water, Fresh-ground Guatemalan coffee beans, natural and artificial flavors", 1.49m);
             Menu kappuccino = new Menu("4", "Komodo Kappuccino", "A cappuccino with a kick", "Milk, espresso, cinnamon, cayenne pepper", 3.99m);
             Menu iceDragon = new Menu("5", "Ice Dragon", "Prefer your coffee cold? Select your favorite Komodo blend served blended or poured over ice.", "Water, Fresh-ground Guatemalan coffee beans, natural and artificial flavors", 2.99m);
 
-            //--11-- Read, "HEY, GO OVER TO THE MENU REPO, THE SEAT OF ALL MYSTICAL POWER, AND CAST THE SPELL ENTITLED "ADDDRINKTOMENU" ON THE OBJECT OF THE MENU CLASS!
-            //Remember, this spell will add the object of the menu class that I specify to the List named "drinks"
             menuRepo.AddDrinkToMenu(komodoDragon);
             menuRepo.AddDrinkToMenu(komocha);
             menuRepo.AddDrinkToMenu(komodoKoffee);
@@ -95,8 +90,6 @@ namespace Challenge_1
                         Console.Clear();
                         menuRepo.printDrinks();
                         break;
-                        //menuRepo.printList(menuRepo.getList());
-                        //break;
 
                     case "4":
                         cont = false;

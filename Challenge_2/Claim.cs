@@ -30,14 +30,14 @@ namespace Challenge_2
         public bool IsValidKomodo { get; set; }
 
         //Override ToString
-        public override string ToString()
-        {
-            return $"{ClaimID}\n" +
-                $"{ClaimType}\n" +
-                $"{ClaimDescription}\n" +
-                $"{DateOfIncident}\n" +
-                $"{DateOfClaim}" +
-                $"{IsValidKomodo}";
-        }
+        //public override string ToString()
+        //{
+        //    return $"{ClaimID}\n" +
+        //        $"{ClaimType}\n" +
+        //        $"{ClaimDescription}\n" +
+        //        $"{DateOfIncident}\n" +
+        //        $"{DateOfClaim}" +
+        //        $"{IsValidKomodo}";
+        //}
     }
 }

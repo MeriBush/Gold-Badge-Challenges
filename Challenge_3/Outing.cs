@@ -29,14 +29,6 @@ namespace Challenge_3
         public decimal CostPerson { get; set; }
         public decimal CostOuting => TotalPeople * CostPerson;
 
-        //public ArrayList GetProperties()
-        //{
-        //    Func<object>[] myProperties =
-        //    {
-        //        () => prop1,
-        //    }
-        //}
-
         //Override ToString
         public override string ToString()
         { 
